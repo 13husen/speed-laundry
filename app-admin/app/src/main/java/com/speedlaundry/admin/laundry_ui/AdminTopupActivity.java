@@ -1,0 +1,89 @@
+package com.speedlaundry.admin.laundry_ui;
+
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.google.gson.Gson;
+import com.speedlaundry.admin.R;
+import com.speedlaundry.admin.base_app.MainApplication;
+import com.speedlaundry.admin.databinding.ActivityAdminTopupBinding;
+import com.speedlaundry.admin.fragment.laundry.topup.TopupCompletedFragment;
+import com.speedlaundry.admin.fragment.laundry.topup.TopupFragment;
+import com.speedlaundry.admin.http.repository.ApiRepository;
+import com.speedlaundry.admin.http.retrofit.RetrofitCallBack;
+import com.speedlaundry.admin.model.user.data.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class AdminTopupActivity extends AppCompatActivity {
+    ActivityAdminTopupBinding mBinding;
+    static RetrofitCallBack api;
+    User user;
+    static Activity activity;
+    ApiRepository repo = ApiRepository.getInstance();
+    Gson gson = new Gson();
+    static EditText token;
+    static FragmentManager fragmentManager;
+    private final boolean isExit = false;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_admin_topup);
+        mBinding.backtoWeb.setOnClickListener(v -> {
+            finish();
+        });
+        user = MainApplication.user;
+        mBinding.TabLayoutHome.setupWithViewPager(mBinding.PagerHome);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),0);
+        viewPagerAdapter.addFragment(new TopupFragment(),"Aktif");
+        viewPagerAdapter.addFragment(new TopupCompletedFragment(),"Selesai" );
+        mBinding.PagerHome.setAdapter(viewPagerAdapter);
+
+    }
+
+
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> fragments = new ArrayList<>();
+        private final List<String> fragmentTitle = new ArrayList<>();
+
+        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
+        }
+
+        public void addFragment(Fragment fragment,String title){
+            fragments.add(fragment);
+            fragmentTitle.add(title);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return fragments.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragments.size();
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return fragmentTitle.get(position);
+        }
+    }
+}

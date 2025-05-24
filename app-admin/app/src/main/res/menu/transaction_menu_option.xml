@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/jemput"
+        android:visible="false"
+        android:title="Jemput" />
+    <item
+        android:id="@+id/ceklaundry"
+        android:visible="false"
+        android:title="Pengecekan" />
+    <item
+        android:id="@+id/jemputtoko"
+        android:visible="false"
+        android:title="Jemput Ke Toko" />
+    <item
+        android:id="@+id/selesaijemput"
+        android:visible="false"
+        android:title="Selesai Jemput" />
+    <item
+        android:id="@+id/terima"
+        android:visible="false"
+        android:title="Terima" />
+    <item
+        android:id="@+id/tolak"
+        android:visible="false"
+        android:title="Tolak" />
+    <item
+        android:id="@+id/cuciselesainantar"
+        android:visible="false"
+        android:title="Selesai &amp; Antar" />
+    <item
+        android:id="@+id/selesaiantar"
+        android:visible="false"
+        android:title="Selesai Antar" />
+    <item
+        android:id="@+id/handle"
+        android:visible="false"
+        android:title="Handle" />
+</menu>

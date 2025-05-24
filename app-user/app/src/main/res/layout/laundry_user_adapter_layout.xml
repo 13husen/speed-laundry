@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item_category"
+            type="com.speedlaundryapp.userapp.model.user.data.User" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/seasonCampaign"
+
+            android:orientation="horizontal">
+
+<!--            <ImageView-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/campaign_leaderboard"-->
+<!--                android:padding="15dp"-->
+<!--                android:src="@drawable/play_icon" />-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingLeft="10dp"
+                    android:text="@{item_category.name}"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:paddingLeft="3dp"
+                    android:text="@{`(` + item_category.type+`)`}"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="5dp"
+                    android:id="@+id/lytStatus"
+                    android:backgroundTint="@{item_category.status != 1 ? (item_category.status != 2 ? (item_category.status != 3 ? (item_category.status != 4 ? @color/md_grey_800 : @color/md_yellow_800) : @color/md_yellow_800) : @color/md_red_800) : @color/md_green_700}"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/txtStatus"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{item_category.status != 1 ? (item_category.status != 2 ? (item_category.status != 3 ? (item_category.status != 4 ? `N/A` : `Suspend`) : `Blok`) : `Tidak Aktif`) : `Aktif`}"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:fontFamily="@font/poppins_regular"/>
+
+                </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:id="@+id/btnMore"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_more"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/text_hint_grey_color"
+            android:layout_height="1sp"/>
+
+    </LinearLayout>
+
+
+</layout>

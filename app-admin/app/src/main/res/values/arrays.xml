@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tabs">
+        <item>Monthly</item>
+        <item>Campaign</item>
+    </string-array>
+    <string-array name="time_type">
+        <item>Hari</item>
+        <item>Jam</item>
+    </string-array>
+    <string-array name="campaign_leaderboard">
+        <item>Monthly</item>
+        <item>Grand</item>
+    </string-array>
+    <string-array name="user_type">
+        <item>Admin</item>
+        <item>Driver</item>
+        <item>Karyawan</item>
+        <item>All</item>
+    </string-array>
+    <string-array name="bulan">
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+    <string-array name="laundry_type">
+        <item>All</item>
+        <item>Kiloan</item>
+        <item>Pakaian</item>
+    </string-array>
+
+    <string-array name="user_status">
+        <item>Aktif</item>
+        <item>Tidak Aktif</item>
+        <item>Blok</item>
+        <item>Suspend</item>
+        <item>All</item>
+    </string-array>
+
+
+
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.LoginActivity">
+
+    <RelativeLayout
+        style="@style/loginParent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:weightSum="12">
+
+                    <RelativeLayout
+                        style="@style/parent"
+                        android:layout_height="230sp"
+                        android:layout_weight="3"
+                        android:background="@drawable/login_shape_bk"
+                        android:orientation="vertical">
+<!--                        <ImageView-->
+<!--                            style="@style/parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:background="@drawable/shinning_big"-->
+<!--                            android:contentDescription="login background" />-->
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:background="@drawable/login_shape_bk"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="15dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:text="@string/login"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="250dp"
+                                    android:textSize="14sp"
+                                    android:lineHeight="22sp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/app_info"
+                                    android:textColor="@color/white" />
+
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="140dp"
+                                android:layout_height="140dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="42dp"
+                                android:layout_marginRight="20dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/washing_machine" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="140dp"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/login"
+                        layout="@layout/layout_login" />
+
+                </LinearLayout>
+                <!-- <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentLeft="true"
+                     android:layout_alignParentTop="true"
+                     android:layout_marginTop="30dp"
+                     android:layout_marginLeft="10dp"
+                     android:src="@android:drawable/ic_menu_close_clear_cancel" />-->
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>
+
+

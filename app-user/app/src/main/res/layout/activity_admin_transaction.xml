@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".laundry_ui.AdminTransactionActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:id="@+id/toolbar_web"
+                android:layout_margin="0dp"
+                android:background="@color/colorPrimary"
+                android:layout_height="?attr/actionBarSize">
+                <ImageView
+                    android:id="@+id/backto_web"
+                    android:layout_width="35dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginRight="15dp"
+                    android:padding="4dp"
+                    android:src="@drawable/back_white_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Transaksi"
+                    android:id="@+id/backTitle"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="18dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"></TextView>
+            </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:id="@+id/TabLayoutHome"
+                app:tabMaxWidth="0dp"
+                app:tabGravity="fill"
+                app:tabBackground="@color/colorPrimary"
+                android:background="@color/white"
+                app:tabIndicatorColor="@color/white"
+                app:tabMode="fixed"
+                app:tabTextColor="@color/white"
+                android:layout_height="wrap_content">
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:text="Timeline"
+                    android:layout_height="wrap_content"></com.google.android.material.tabs.TabItem>
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:text="Explore"
+                    android:layout_height="wrap_content"></com.google.android.material.tabs.TabItem>
+
+            </com.google.android.material.tabs.TabLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/PagerHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"></androidx.viewpager.widget.ViewPager>
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:padding="2dp"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                app:cardCornerRadius="3dp">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@color/white"-->
+<!--                    >-->
+
+<!--                    <Button-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:fontFamily="@font/poppins_bold"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:letterSpacing="0.20"-->
+<!--                        android:id="@+id/doDonasi"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Donasi"-->
+<!--                        android:background="@drawable/blue_button"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:layout_alignParentBottom="true" />-->
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

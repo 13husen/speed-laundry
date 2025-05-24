@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bayar"
+        android:visible="false"
+        android:title="Bayar" />
+    <item
+        android:id="@+id/konfirmasi"
+        android:visible="false"
+        android:title="Kirim Bukti Bayar" />
+</menu>

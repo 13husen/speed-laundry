@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="filter"
+            type="com.speedlaundry.admin.model.laundry.FilterListLaundry" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingBottom="20dp"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/close"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/cancel_icon"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Filter Daftar List"
+                    android:textColor="@color/black"
+                    android:textSize="19sp" />
+
+                <LinearLayout
+                    android:id="@+id/lytNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/custom_edittext_lable"
+                        android:text="Nama" />
+
+                    <EditText
+                        android:id="@+id/edtNama"
+                        style="@style/custom_edittext"
+                        android:fontFamily="@font/poppins_regular"
+                        android:inputType="text"
+                        android:text="@{filter.nama}"></EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/lytTipeUser"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        style="@style/custom_edittext_lable"
+                        android:text="Tipe" />
+                    <RelativeLayout
+                        android:id="@+id/userType_rly"
+                        style="@style/custom_edittext"
+                        android:background="@drawable/edittext_bg_blue">
+
+                        <Spinner
+                            android:id="@+id/edtUserType"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:entries="@array/user_type"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
+                            android:theme="@style/SpinnerTheme"></Spinner>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/custom_edittext_lable"
+                    android:text="Status" />
+                <RelativeLayout
+                    android:id="@+id/status_rly"
+                    style="@style/custom_edittext"
+                    android:background="@drawable/edittext_bg_blue">
+
+                    <Spinner
+                        android:id="@+id/edtStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:entries="@array/user_status"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="12sp"
+                        android:theme="@style/SpinnerTheme"></Spinner>
+                </RelativeLayout>
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/blue_button"
+                    android:text="Filter"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/seasonCampaign"
+            android:orientation="horizontal">
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="5dp"
+                    android:id="@+id/lytType"
+                    app:cardBackgroundColor="@color/black"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/InfoItemType"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Status"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_regular"/>
+
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_marginLeft="12dp"
+                    android:textSize="13sp"
+                    android:layout_marginTop="5dp"
+                    android:text="Kategori : Cuci + Laundry (Rp 5000)"
+                    android:id="@+id/InfoKategori" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:paddingLeft="12dp"
+                    android:id="@+id/InfoType"
+                    android:text="Tipe Laundry : Reguler (Rp 2000)"
+                    android:textSize="14sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:id="@+id/lytPakaian"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Pakaian : "
+                        android:layout_marginLeft="12dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="14sp"
+                        android:layout_height="wrap_content"></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:id="@+id/InfoPakaian"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="- Jas Blazer (Rp 12000)"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:id="@+id/lytKiloan"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Bobot : 12 KG "
+                        android:id="@+id/InfoBobot"
+                        android:layout_marginLeft="12dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="14sp"
+                        android:layout_height="wrap_content"></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:id="@+id/InfoPcs"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Jumlah Pakaian : 15"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:id="@+id/btnDelete"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_delete"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/text_hint_grey_color"
+            android:layout_height="1sp"/>
+
+    </LinearLayout>
+
+
+</layout>

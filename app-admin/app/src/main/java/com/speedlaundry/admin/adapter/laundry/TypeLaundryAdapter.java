@@ -1,0 +1,134 @@
+package com.speedlaundry.admin.adapter.laundry;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.blankj.utilcode.util.ToastUtils;
+import com.speedlaundry.admin.R;
+import com.speedlaundry.admin.base_app.MainApplication;
+import com.speedlaundry.admin.databinding.LaundryTypeAdapterLayoutBinding;
+import com.speedlaundry.admin.http.repository.ApiRepository;
+import com.speedlaundry.admin.http.repository.RepositoryEnum;
+import com.speedlaundry.admin.laundry_ui.TypeLaundryDetailActivity;
+import com.speedlaundry.admin.model.laundry.type_laundry.TypeLaundryItem;
+import com.speedlaundry.admin.utils.GeneralUtil;
+
+import java.util.ArrayList;
+
+public class TypeLaundryAdapter extends RecyclerView.Adapter<TypeLaundryAdapter.Holder> {
+    ArrayList<TypeLaundryItem> categories;
+    CategoryAdapterClickListener listener;
+    RefreshDataListener refreshDataListener;
+    Activity activity;
+
+    public TypeLaundryAdapter(ArrayList<TypeLaundryItem> categories, Activity activity
+    ) {
+        this.categories = categories;
+        this.activity = activity;
+    }
+
+    public void setListener(CategoryAdapterClickListener listener, RefreshDataListener refreshDataListener) {
+        this.listener = listener;
+        this.refreshDataListener = refreshDataListener;
+    }
+
+    @NonNull
+    @Override
+    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.laundry_type_adapter_layout, parent, false);
+        return new Holder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull Holder holder, int position) {
+        LaundryTypeAdapterLayoutBinding mBinding = holder.mBinding;
+        TypeLaundryItem category = categories.get(position);
+        mBinding.setItemCategory(category);
+        mBinding.txtFee.setText(" : " + GeneralUtil.convertRupiah(Integer.parseInt(category.getFee())));
+        mBinding.btnMore.setOnClickListener(v -> {
+            PopupMenu popup = new PopupMenu(v.getContext(), mBinding.btnMore);
+            popup.inflate(R.menu.basic_option_menu);
+            popup.setOnMenuItemClickListener(item -> {
+                int id = item.getItemId();
+                if (id == R.id.edit) {
+                    Intent i = new Intent(v.getContext(), TypeLaundryDetailActivity.class);
+                    i.putExtra("action", "edit");
+                    i.putExtra("id", category.getId());
+                    i.putExtra("item_category", category);
+                    v.getContext().startActivity(i);
+                    return true;
+                } else if (id == R.id.delete) {
+                    deleteCategory(v.getContext(), category.getId());
+                    // handle menu2 click
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            popup.show();
+        });
+        mBinding.getRoot().setOnClickListener(v->{
+            listener.onCategoryClickListener(category);
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return categories.size();
+    }
+
+    public class Holder extends RecyclerView.ViewHolder {
+        LaundryTypeAdapterLayoutBinding mBinding;
+        public Holder(@NonNull View itemView) {
+            super(itemView);
+            mBinding = DataBindingUtil.bind(itemView);
+        }
+    }
+    public void deleteCategory(Context context, int id){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setCancelable(true);
+        builder.setTitle("Hapus Data ?");
+        builder.setMessage("Data yang terhapus tidak bisa dikembalikan");
+        builder.setNegativeButton("Kembali", (dialog, which) -> {});
+        builder.setPositiveButton("Hapus",
+                (dialog, which) -> {
+                    ApiRepository repository = ApiRepository.getInstance();
+                    repository.setDialog(activity);
+                    repository.setApiListener(MainApplication.api.deleteCategory(id),
+                            (object, codeResponse, rEnum) -> {
+                                if (rEnum == RepositoryEnum.SUCCESS) {
+                                    String data = object.getString("message");
+                                    ToastUtils.showLong(data);
+                                    refreshDataListener.refreshListener();
+
+                                } else {
+                                    Toast.makeText(context, object.toString(), Toast.LENGTH_LONG).show();
+                                }
+                            });
+                });
+        builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> {
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public interface CategoryAdapterClickListener{
+        void onCategoryClickListener(TypeLaundryItem categorizeClotheItem);
+    }
+    public interface RefreshDataListener{
+        void refreshListener();
+    }
+}

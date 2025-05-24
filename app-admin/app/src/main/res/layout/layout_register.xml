@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        style="@style/loginCard"
+        android:layout_gravity="center"
+        android:background="@color/whiteCardColor"
+        android:elevation="5dp"
+        app:cardCornerRadius="@dimen/loginCardRadius">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:layout_marginBottom="@dimen/loginViewsMargin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="@dimen/loginViewsMargin">
+
+            <TextView
+                style="@style/greyText"
+                android:layout_marginTop="24sp"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/register_desc" />
+            <EditText
+                android:id="@+id/etName"
+                style="@style/custom_edittext"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:hint="@string/register_name_hint"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                style="@style/custom_edittext"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:background="@drawable/edittext_bg_blue"
+                style="@style/custom_edittext"
+                android:hint="@string/login_email_hint"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+
+            <EditText
+                android:id="@+id/etPassword"
+                style="@style/custom_edittext"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etPassword2"
+                style="@style/custom_edittext"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+
+                android:textSize="14sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/userType_rly"
+                style="@style/custom_edittext"
+                android:background="@drawable/edittext_bg_blue">
+
+                <Spinner
+                    android:id="@+id/edtUserType"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:entries="@array/user_type"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    android:theme="@style/SpinnerTheme"></Spinner>
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/registerButton"
+                style="@style/loginButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="30sp"
+                android:background="@drawable/blue_button"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Confirm"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

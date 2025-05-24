@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="di_proses">Di Proses</string>
+    <string name="di_antar">Di Antar</string>
+    <string name="pengecekan">Pengecekan</string>
+    <string name="pending_pembayaran">Pending Pembayaran</string>
+    <string name="kedaluwarsa">Kedaluwarsa</string>
+    <string name="di_cancel">Di Cancel</string>
+    <string name="di_antar_pulang">Di Antar Pulang</string>
+    <string name="selesai">Selesai</string>
+    <string name="di_cuci">Di Cuci</string>
+    <string name="gagal">Gagal</string>
+    <string name="sukses">Sukses</string>
+</resources>

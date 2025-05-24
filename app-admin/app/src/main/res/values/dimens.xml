@@ -1,0 +1,18 @@
+<resources>
+    <!--dimes for design 3-->
+    <dimen name="headerTextSize">22sp</dimen>
+    <dimen name="newsMoreTextSize">12sp</dimen>
+    <dimen name="loginCardRadius">20dp</dimen>
+    <dimen name="cardRadius">32dp</dimen>
+    <dimen name="loginViewsMargin">8dp</dimen>
+
+    <dimen name="signup_text_margin_top">10dp</dimen>
+    <dimen name="tab_title">20sp</dimen>
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="elevation">12dp</dimen>
+    <dimen name="text_inside_button">18sp</dimen>
+    <dimen name="tabstrip_textsize">14sp</dimen>
+
+</resources>

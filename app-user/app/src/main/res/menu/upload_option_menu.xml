@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/camera"
+        android:icon="@drawable/baseline_photo_camera_black_24"
+        android:title="Kamera" />
+    <item
+        android:id="@+id/gallery"
+        android:icon="@drawable/baseline_photo_black_24"
+        android:title="Galeri" />
+</menu>

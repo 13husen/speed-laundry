@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="transaction_detail"
+            type="com.speedlaundryapp.userapp.model.laundry.transaction.TransactionItem" />
+    </data>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/refresh"
+        android:background="@color/colorPrimary"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/back"
+                        android:src="@drawable/back_white_icon"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:id="@+id/txtDetail"
+                    android:text="@{`#`+ transaction_detail.invoice}"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"></TextView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                </LinearLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:background="@color/colorPrimary"></LinearLayout>
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:background="@color/colorPrimary"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/btnSubmit"
+                    android:layout_marginBottom="125dp"
+                    tools:ignore="NotSibling">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_transaction"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="25dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginBottom="5dp"
+                                android:padding="10dp"
+                                app:cardCornerRadius="20dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="20dp">
+                                    <TextView
+                                        android:layout_marginBottom="6dp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:text="Data Transaksi"/>
+                                    <TableLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent">
+
+                                        <TableRow
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent">
+
+                                            <TextView
+                                                android:textSize="13sp"
+                                                android:text="Invoice"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_column="1" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:textSize="13sp"
+                                                android:text="@{` : ` + transaction_detail.invoice}" />
+
+                                        </TableRow>
+
+                                        <TableRow>
+
+                                            <TextView
+                                                android:text="Nama"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="13sp"
+                                                android:layout_column="1" />
+
+                                            <TextView
+                                                android:text="@{` : ` + transaction_detail.user.name}"
+                                                android:layout_width="wrap_content"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:textSize="13sp"
+                                                android:layout_height="wrap_content" />
+                                        </TableRow>
+
+
+
+                                        <TableRow>
+                                            <TextView
+                                                android:text="Status"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="13sp"
+                                                android:layout_column="1" />
+
+                                            <androidx.cardview.widget.CardView
+                                                app:cardCornerRadius="5dp"
+                                                android:id="@+id/lytStatus"
+                                                android:layout_marginRight="10dp"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content">
+                                                <TextView
+                                                    android:id="@+id/txtStatusTrx"
+                                                    android:textColor="@color/white"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="10dp"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:fontFamily="@font/poppins_regular"/>
+
+                                            </androidx.cardview.widget.CardView>
+                                        </TableRow>
+                                    </TableLayout>
+
+
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_laundry_details"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="25dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginBottom="5dp"
+                                android:padding="10dp"
+                                app:cardCornerRadius="20dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="20dp">
+                                    <TextView
+                                        android:layout_marginBottom="6dp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:text="Detail Laundry"/>
+                                    <TableLayout
+                                        android:id="@+id/tblLaundry"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+
+                                    </TableLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_payment"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="25dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginBottom="5dp"
+                                android:padding="10dp"
+                                app:cardCornerRadius="20dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="20dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp"
+                                        android:layout_marginBottom="6dp"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:text="Pembayaran"/>
+                                    <TableLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent">
+
+                                        <TableRow
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent">
+
+                                            <TextView
+                                                android:textSize="13sp"
+                                                android:text="Tipe Pembayaran"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_column="1" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:textSize="13sp"
+                                                android:text="@{transaction_detail.payment.paymentType != 1 ? (transaction_detail.payment.paymentType != 2 ? (transaction_detail.payment.paymentType != 3 ? `:  N/A` : `:  Wallet`) : `:  Bank`) : `:   Cash`}"
+                                                />
+
+                                        </TableRow>
+
+                                        <TableRow>
+
+                                            <TextView
+                                                android:text="Nominal"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_column="1"
+                                                android:textSize="13sp"/>
+
+                                            <TextView
+                                                android:id="@+id/txtNominal"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="13sp"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_height="wrap_content" />
+                                        </TableRow>
+                                        <TableRow>
+                                            <TextView
+                                                android:text="Biaya Admin"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="13sp"
+                                                android:layout_column="1" />
+
+                                            <TextView
+                                                android:id="@+id/txtAdmin"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="13sp"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_height="wrap_content" />
+                                        </TableRow>
+                                        <TableRow>
+                                            <TextView
+                                                android:text="Total Biaya"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="13sp"
+                                                android:layout_column="1" />
+
+                                            <TextView
+                                                android:id="@+id/txtTotalBiaya"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="13sp"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_height="wrap_content" />
+                                        </TableRow>
+
+                                    </TableLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginLeft="15dp"
+                                android:id="@+id/cardKonfirmasi"
+                                android:layout_marginTop="25dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginBottom="5dp"
+                                android:padding="10dp"
+                                app:cardCornerRadius="20dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="20dp">
+                                    <TextView
+                                        android:layout_marginBottom="6dp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:text="Konfirmasi Pembayaran"/>
+                                    <TableLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent">
+
+                                        <TableRow
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent">
+
+                                            <TextView
+                                                android:textSize="13sp"
+                                                android:text="Nama Bank"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_column="1" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:textSize="13sp"
+                                                android:text="@{` : ` + (transaction_detail.payment.confirmBank ?? ``)}" />
+
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent">
+
+                                            <TextView
+                                                android:textSize="13sp"
+                                                android:text="Pemilik Rekening"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_column="1" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:textSize="13sp"
+                                                android:text="@{` : ` + (transaction_detail.payment.confirmBankOwner ?? ``)}" />
+
+                                        </TableRow>
+                                        <TableRow
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent">
+
+                                            <TextView
+                                                android:textSize="13sp"
+                                                android:text="No Rekening"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_column="1" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/poppins_regular"
+                                                android:textSize="13sp"
+                                                android:text="@{` : ` + (transaction_detail.payment.confirmBankNumber ?? ``)}" />
+
+                                        </TableRow>
+                                    </TableLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/lytConfirm"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_alignParentBottom="true"
+                    app:cardCornerRadius="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+
+                        </LinearLayout>
+                        <Button
+                            android:layout_margin="10dp"
+                            android:id="@+id/btnConfirm"
+                            android:layout_width="match_parent"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textAllCaps="false"
+                            android:letterSpacing="0.20"
+                            android:layout_height="wrap_content"
+                            android:text="Kirim Bukti Bayar"
+                            android:background="@drawable/blue_button"
+                            android:textColor="@color/white"
+                            android:textSize="17dp"
+                            android:layout_alignParentBottom="true" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

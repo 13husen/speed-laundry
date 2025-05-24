@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Dashboard Speed Laundry</string>
+    <string name="app_info">Dashboard Administrator, Driver dan Karyawan</string>
+
+
+    <!--    <string name="facebook_app_id">351827532506487</string>-->
+    <!--    <string name="fb_login_protocol_scheme">fb351827532506487</string>-->
+    <string name="facebook_app_id">638752070110991</string>
+    <string name="fb_login_protocol_scheme">fb638752070110991</string>
+
+
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="register_name_hint">Name</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Akun Baru? </string>
+    <string name="facebook">Continue with Facebook</string>
+    <string name="back">Back</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_shop">Shop</string>
+    <string name="menu_live">Live Broadcast</string>
+    <string name="live_broadcast">Live Broadcast</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_leaderboard">Leaderboard</string>
+    <string name="powered_by">Powered by</string>
+    <string name="login">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="submit">Submit</string>
+    <string name="profile.change_password_success">You have successfuly change your\npassword.</string>
+    <string name="button.confirm">Confirm</string>
+    <string name="register.confirm_password">Confirm Password</string>
+    <string name="register.password">Password</string>
+    <string name="register.otp_title">Please type the verification code\nsent to phone number</string>
+    <string name="button.verify">Verify</string>
+    <string name="registration">Registrasi</string>
+    <string name="verification">VERIFICATION</string>
+    <string name="dialog.title_daily">Click collect to get your daily reward</string>
+    <string name="contest.participants">Participants</string>
+    <string name="register_desc">Mohon isi semua data yang tersedia untuk mendaftarkan akun!</string>
+    <string name="resend_otp"><u>Resend OTP</u></string>
+    <string name="tnc"><u>Terms and Conditions</u></string>
+    <string name="referral_code">Referral Code</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="buy_power_combo"><![CDATA[Buy Power & Combo]]></string>
+    <string name="buy_helper_amp_combo"><![CDATA[Buy Helper & Combo]]></string>
+    <string name="campaign_event">Campaign Event</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="live_contest">Live Contest</string>
+    <string name="collect">Collect</string>
+    <string name="live_contest_leaderboard">Live Contest Leaderboard</string>
+    <string name="request_otp"><u>Request OTP</u></string>
+    <string name="continue_with">Continue with</string>
+    <string name="ask_token_from_friend">Ask token from friend</string>
+    <string name="are_you_sure_want_to_exit">Anda yakin ingin Keluar aplikasi ?</string>
+    <string name="press_again_to_exit">Press again to exit</string>
+    <string name="OK">OK</string>
+    <string name="default_notification_channel_id">speedlaundry_channel</string>
+    <string name="notification">Notification</string>
+    <string name="monthly_medal_race">Monthly\nMedal Race</string>
+    <string name="more_rewards_awaits">More rewards awaits</string>
+
+    <!-- Laundry Item -->
+    <string name="menu_manage">Admin</string>
+    <string name="menu_transaction">Transaksi</string>
+    <string name="menu_account">Akun</string>
+    <string name="forgot_password">Lupa Password?</string>
+    <string name="daftar_disini">Daftar disini</string>
+    <string name="transaksi">Transaksi</string>
+    <string name="ubah_password">Ubah Password</string>
+    <string name="keluar">Keluar</string>
+    <string name="top_up">Top Up</string>
+    <string name="kategori_pakaian">Kategori Pakaian</string>
+    <string name="ic_add">ic_add</string>
+    <string name="tombol_backto">tombol backto</string>
+    <string name="detail_kategori_pakaian">Detail Kategori Pakaian</string>
+    <string name="nama">Nama</string>
+    <string name="status">Status</string>
+    <string name="kategori">Kategori</string>
+    <string name="recycle_view">recycle view</string>
+    <string name="detail_kategori">Detail Kategori</string>
+    <string name="detail">Detail</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="edit_text">edit text</string>
+    <string name="biaya_per_kg">Biaya (per KG)</string>
+    <string name="image_view">image view</string>
+
+</resources>

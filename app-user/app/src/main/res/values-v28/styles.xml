@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="greyText" parent="parent">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">22sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/text_hint</item>
+    </style>
+</resources>
